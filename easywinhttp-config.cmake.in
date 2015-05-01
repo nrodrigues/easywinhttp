@@ -1,0 +1,13 @@
+# Config file for the easywinhttp package
+# Defines the following variables
+# easywinhttp_INCLUDE_DIRS - include directories for easywinhttp
+# easywinhttp_LIBRARIES    - libraries to link against
+
+message (STATUS "Found easywinhttp in ${easywinhttp_DIR}")
+
+if (NOT TARGET easywinhttp)
+    include (${easywinhttp_DIR}/easywinhttp-targets.cmake)
+endif ()
+
+set (easywinhttp_INCLUDE_DIRS "@easywinhttp_SOURCE_DIR@/include")
+set (easywinhttp_LIBRARIES easywinhttp winhttp)
